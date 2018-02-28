@@ -1,0 +1,23 @@
+
+public class Gato {
+	String nome,raca,cor,tipoComida ;
+	Double peso, altura;
+	
+	void miar() {
+		System.out.println("Miaauu");
+	}
+	void pular() {
+		System.out.println("fuu");
+	}
+	void andar() {
+		System.out.println(" ");
+	}
+	void comer() {
+		System.out.println("hum mium mium ");
+	}
+	void dormir() {
+		System.out.println("zzz");
+	}
+	
+
+}
