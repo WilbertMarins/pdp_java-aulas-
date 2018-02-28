@@ -1,0 +1,28 @@
+
+public class Carro {
+	String numChassi,cor;
+	Double vMax ,km,pot;
+	int qtdPortas;
+	
+	void ligar() {
+		System.out.println("on");
+	}
+	void desligar() {
+		System.out.println("tum");
+	}
+	void acelerar() {
+		System.out.println("vruuuummmm");
+	}
+	void frear() {
+		System.out.println("arrrrrr");
+	}
+	void girarVolante() {
+		System.out.println("tchuuuu");
+	}
+	void reduzirMarcha() {
+		System.out.println("Tique"); 
+	}
+	
+	
+
+}
