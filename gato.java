@@ -24,4 +24,7 @@ public class Gato {
 		System.out.println("Peso:" + peso);
 		
 }
+	void miar() {
+		System.out.println(nome + " Miiaaauuuuu");
+	}
 }
