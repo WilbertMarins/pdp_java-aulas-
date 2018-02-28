@@ -16,6 +16,17 @@ public class Execucao {
 		cat1.fazerAniversario();
 		cat1.comer();
 		cat1.correr();
+		cat1.miar();
+		
+		System.out.println(" ");
+		
+		cat2.fazerAniversario();
+		cat2.comer();
+		cat2.correr();
+		cat2.miar();
+		
+		System.out.println(" ");
+
 		
 		cat2.fazerAniversario();
 		cat2.comer();
