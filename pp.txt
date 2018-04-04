@@ -1,0 +1,302 @@
+*MOdelo*
+
+*PROFESSOR*
+package modelo;
+
+import java.util.ArrayList;
+
+public class Professor {
+	private String nomeProf, cpfProf, matriculaProf, tituloProf, foneProf;
+	Departamento depProf;
+	ArrayList<Aluno> orientandos;
+	Endereco endProf;
+	
+	
+	public Professor(){
+		this.nomeProf = "";
+		this.cpfProf = "";
+		this.matriculaProf = "";
+		this.tituloProf = "";
+		this.foneProf = "";
+		this.depProf = null;
+		this.orientandos = new ArrayList<Aluno>();
+		this.endProf = new Endereco();
+	}
+	
+	public Professor(String nomeProf, String cpfProf, String matriculaProf, String tituloProf, String foneProf, Departamento depProf, String pRua, int pNum, String pBairro, String pCep){
+		this.nomeProf = nomeProf;
+		this.cpfProf = cpfProf;
+		this.matriculaProf = matriculaProf;
+		this.tituloProf = tituloProf;
+		this.foneProf = foneProf;
+		this.depProf = depProf;
+		this.orientandos = new ArrayList<Aluno>();
+		this.endProf = new Endereco(pRua, pNum, pBairro, pCep);
+	
+	}
+	
+	public Professor(String nomeProf, String cpfProf, String matriculaProf, String tituloProf, String foneProf, String pRua, int pNum, String pBairro, String pCep){
+		this.nomeProf = nomeProf;
+		this.cpfProf = cpfProf;
+		this.matriculaProf = matriculaProf;
+		this.tituloProf = tituloProf;
+		this.foneProf = foneProf;
+		this.orientandos = new ArrayList<Aluno>();
+		this.endProf = new Endereco(pRua, pNum, pBairro, pCep);
+		
+	
+	}
+	
+	public void addOrientando(Aluno obj){
+		this.orientandos.add(obj);
+	}
+	
+	public void removerOrientando(Aluno obj){
+		this.orientandos.remove(obj);
+	}
+	
+	public void mostrarOrientando(){
+		for(int i = 0; i < this.orientandos.size(); i++){
+			this.orientandos.get(i).mostrarDadosAluno();
+		}
+	}
+	
+	public void cadastrarDepProf(Departamento depProf){
+		this.depProf = depProf;
+	}
+	
+	public void mostrarDados(){
+		System.out.println("nome: "+this.getNomeProf());
+		System.out.println("cpf: "+ this.getCpfProf());
+		System.out.println("matricula: "+ this.getMatriculaProf());
+		System.out.println("titulo: "+ this.getTituloProf());
+		System.out.println("fone: "+ this.getFoneProf());
+		endProf.mostrarEnd();
+		
+	}
+	
+
+	public String getNomeProf() {
+		return nomeProf;
+	}
+
+	public void setNomeProf(String nomeProf) {
+		this.nomeProf = nomeProf;
+	}
+
+	public String getCpfProf() {
+		return cpfProf;
+	}
+
+	public void setCpfProf(String cpfProf) {
+		this.cpfProf = cpfProf;
+	}
+
+	public String getMatriculaProf() {
+		return matriculaProf;
+	}
+
+	public void setMatriculaProf(String matriculaProf) {
+		this.matriculaProf = matriculaProf;
+	}
+
+	public String getTituloProf() {
+		return tituloProf;
+	}
+
+	public void setTituloProf(String tituloProf) {
+		this.tituloProf = tituloProf;
+	}
+
+	public String getFoneProf() {
+		return foneProf;
+	}
+
+	public void setFoneProf(String foneProf) {
+		this.foneProf = foneProf;
+	}
+
+}
+
+*DEPARTAMENTO*
+
+package modelo;
+
+public class Departamento {
+	private String nomeDep, localDep, dataCriacao;
+	private int qtdeProfDep;
+	
+	public Departamento(){
+		nomeDep = "";
+		localDep = "";
+		dataCriacao = "";
+		qtdeProfDep = 1;
+	}
+	public Departamento(String nomeDep, String localDep, String dataCriacao, int qtdeProfDep){
+		this.nomeDep = nomeDep;
+		this.localDep = localDep;
+		this.dataCriacao = dataCriacao;
+		this.qtdeProfDep = qtdeProfDep;
+		
+	}
+	
+	
+	public String getNomeDep() {
+		return nomeDep;
+	}
+	public void setNomeDep(String nomeDep) {
+		this.nomeDep = nomeDep;
+	}
+	public String getLocalDep() {
+		return localDep;
+	}
+	public void setLocalDep(String localDep) {
+		this.localDep = localDep;
+	}
+	public String getDataCriacao() {
+		return dataCriacao;
+	}
+	public void setDataCriacao(String dataCriacao) {
+		this.dataCriacao = dataCriacao;
+	}
+	public int getQtdeProfDep() {
+		return qtdeProfDep;
+	}
+	public void setQtdeProfDep(int qtdeProfDep) {
+		this.qtdeProfDep = qtdeProfDep;
+	}
+
+}
+
+*ALUNO*
+
+package modelo;
+
+public class Aluno {
+	private String nomeAlu, cpfAlu, matriculaAlu, enderecoAlu;
+	
+	public Aluno(){
+		this.nomeAlu = "";
+		this.cpfAlu = "";
+		this.matriculaAlu = "";
+		this.enderecoAlu = "";
+		
+	}
+	
+	public Aluno(String pNome, String pCpf, String pMat, String pEnd){
+		this.nomeAlu = pNome;
+		this.cpfAlu = pCpf;
+		this.matriculaAlu = pMat;
+		this.enderecoAlu = pEnd;
+	}
+	
+	public void mostrarDadosAluno(){
+		System.out.println("nome: "+ this.getNomeAlu());
+		System.out.println("cpf: "+this.getCpfAlu());
+		System.out.println("matricula: "+ this.getMatriculaAlu());
+		System.out.println("Endereço: "+ this.getEnderecoAlu());
+	}
+
+	public String getNomeAlu() {
+		return nomeAlu;
+	}
+
+	public void setNomeAlu(String nomeAlu) {
+		this.nomeAlu = nomeAlu;
+	}
+
+	public String getCpfAlu() {
+		return cpfAlu;
+	}
+
+	public void setCpfAlu(String cpfAlu) {
+		this.cpfAlu = cpfAlu;
+	}
+
+	public String getMatriculaAlu() {
+		return matriculaAlu;
+	}
+
+	public void setMatriculaAlu(String matriculaAlu) {
+		this.matriculaAlu = matriculaAlu;
+	}
+
+	public String getEnderecoAlu() {
+		return enderecoAlu;
+	}
+
+	public void setEnderecoAlu(String enderecoAlu) {
+		this.enderecoAlu = enderecoAlu;
+	}
+}
+
+*ENDERECO*
+
+package modelo;
+
+public class Endereco {
+	private String rua, bairro, cep, cidade = "Manaus", estado = "AM"; 
+	private int numero;
+	
+	public Endereco(){
+		this.rua = "";
+		this.numero = 0;
+		this.bairro = "";
+		this.cep = "";		
+	}
+	
+	public Endereco(String pRua, int pNum, String pBairro, String pCep){
+		this.rua = pRua;
+		this.numero = pNum;
+		this.bairro = pBairro;
+		this.cep = pCep;
+	}
+	public Endereco(String pRua, int pNum, String pBairro, String pCep, String pCidade, String pEstado){
+		this.rua = pRua;
+		this.numero = pNum;
+		this.bairro = pBairro;
+		this.cep = pCep;
+		this.cidade = pCidade;
+		this.estado = pEstado;
+	}
+	
+	public void mostrarEnd(){
+		System.out.println("rua: " + this.getRua());
+		System.out.println("numero: " + this.getNumero());
+		System.out.println("bairro: "+ this.getBairro());
+		System.out.println("ceo: " + this.getCep());
+		System.out.println("cidade: " + this.getCidade());
+		System.out.println("Estado: " + this.getEstado());
+	}
+}
+
+*EEXECUCAO*
+
+package execucao;
+
+import modelo.Aluno;
+import modelo.Departamento;
+import modelo.Professor;
+
+public class Execucao {
+
+	public static void main(String[] args) {
+		Professor prof1 = new Professor("jose", "11111", "2222", "3333", "444", "rua 5", 45, "liberdade", "69400-543");
+		Departamento dep1 = new Departamento("Comp", "uea","20 de marc", 1);
+		Aluno alu1 = new Aluno("menino", "222.222.222-56", "222", "rua1 casa4");
+		Aluno alu2 = new Aluno("menina", "333.333.333-55", "333", "rua 1 casa3");
+		Aluno alu3 = new Aluno("jovem", "334.333.333-54", "333", "rua 1 casa2");
+		Aluno alu4 = new Aluno("rapaz", "333.333.333-53", "333", "rua 1 casa1");
+		
+		prof1.addOrientando(alu1);
+		prof1.addOrientando(alu4);
+		
+		//associação 
+		prof1.cadastrarDepProf(dep1);
+		
+		prof1.mostrarDados();
+		prof1.mostrarOrientando();
+	}
+
+}
+
